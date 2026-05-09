@@ -1,0 +1,34 @@
+
+.env
+*.env
+ 
+
+data/serials.db
+data/serials.db-shm
+data/serials.db-wal
+ 
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+ 
+# IDE
+.vscode/
+.idea/
+*.swp
+.validation_pipeline
+ 
+# OS
+.DS_Store
+
+ 
+# # Sample images 
+# data/sample/*.jpg
+# data/sample/*.jpeg
+# data/sample/*.png
+ 
