@@ -32,3 +32,4 @@ build/
 # data/sample/*.jpeg
 # data/sample/*.png
  
+ *test_2.py*

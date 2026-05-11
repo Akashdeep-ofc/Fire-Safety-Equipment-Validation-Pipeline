@@ -1,0 +1,141 @@
+{
+  "submission_id": "sample_002",
+  "timestamp": "2026-05-11T11:39:46.886659+00:00",
+  "image_folder": "/Users/akashdeep/Desktop/Main/Official Docs and Info/Placement Drive/Offcampus/9. DeepReef/Assignment/Project Deepreef Assignment/Fire-Safety-Equipment-Validation-Pipeline/data/sample",
+  "checks": {
+    "subject_verification": {
+      "status": "PASS",
+      "confidence": 1.0,
+      "reason": "The images clearly show a physical, mounted ABC dry chemical fire extinguisher with its pressure gauge and maintenance tags.",
+      "usage": {
+        "model": "gemini-3.1-flash-lite",
+        "calls": 1,
+        "input_tokens": 4498,
+        "output_tokens": 48,
+        "thinking_tokens": 0,
+        "cached_tokens": 0,
+        "total_tokens": 4546
+      }
+    },
+    "refill_status": {
+      "status": "PASS",
+      "confidence": 1.0,
+      "reason": "The unit was last refilled on 20/04/2026 and is due for its next refill by 20/04/2027, which is in the future relative to today's date of 11/05/2026, so the unit passes.",
+      "usage": {
+        "model": "gemini-2.5-flash",
+        "calls": 1,
+        "input_tokens": 1511,
+        "output_tokens": 136,
+        "thinking_tokens": 871,
+        "cached_tokens": 0,
+        "total_tokens": 2518
+      },
+      "details": {
+        "refilling_date": "20/04/2026",
+        "refilling_due_date": "20/04/2027"
+      }
+    },
+    "pressure_gauge": {
+      "status": "PASS",
+      "confidence": 0.95,
+      "reason": "The pressure gauge needle is clearly pointing to the green zone, the gauge face is intact, and no signs of tampering are visible.",
+      "usage": {
+        "model": "gemini-2.5-flash",
+        "calls": 1,
+        "input_tokens": 1423,
+        "output_tokens": 83,
+        "thinking_tokens": 437,
+        "cached_tokens": 0,
+        "total_tokens": 1943
+      },
+      "details": {
+        "needle_zone": "green",
+        "gauge_intact": true,
+        "tampering_detected": false
+      }
+    },
+    "tamper_seal": {
+      "status": "PASS",
+      "confidence": 1.0,
+      "reason": "A yellow numbered plastic tamper-evident tag is clearly present and appears unbroken and intact, threaded through the safety pin and handle.",
+      "usage": {
+        "model": "gemini-2.5-flash",
+        "calls": 1,
+        "input_tokens": 1429,
+        "output_tokens": 74,
+        "thinking_tokens": 273,
+        "cached_tokens": 0,
+        "total_tokens": 1776
+      },
+      "details": {
+        "seal_present": true,
+        "seal_type": "yellow numbered plastic tag"
+      }
+    },
+    "serial_uniqueness": {
+      "status": "FAIL",
+      "confidence": 1.0,
+      "reason": "Serial '1615' already seen in submission 'sample_001' on 2026-05-09.",
+      "usage": {
+        "model": "gemini-2.5-flash",
+        "calls": 1,
+        "input_tokens": 1266,
+        "output_tokens": 69,
+        "thinking_tokens": 276,
+        "cached_tokens": 0,
+        "total_tokens": 1611
+      },
+      "details": {
+        "serial_number": "1615",
+        "duplicate": true,
+        "prior_record": {
+          "serial_number": "1615",
+          "submission_id": "sample_001",
+          "image_folder": "/Users/akashdeep/Desktop/Main/Official Docs and Info/Placement Drive/Offcampus/9. DeepReef/Assignment/Project Deepreef Assignment/Fire-Safety-Equipment-Validation-Pipeline/data/sample",
+          "first_seen": "2026-05-09T18:59:05.002910+00:00"
+        }
+      }
+    }
+  },
+  "verdict": "REJECT",
+  "usage_summary": {
+    "total_calls": 5,
+    "total_input_tokens": 10127,
+    "total_output_tokens": 410,
+    "total_thinking_tokens": 1857,
+    "total_cached_tokens": 0,
+    "total_tokens": 12394,
+    "per_check": {
+      "subject_verification": {
+        "model": "gemini-3.1-flash-lite",
+        "calls": 1,
+        "input_tokens": 4498,
+        "output_tokens": 48
+      },
+      "refill_status": {
+        "model": "gemini-2.5-flash",
+        "calls": 1,
+        "input_tokens": 1511,
+        "output_tokens": 136
+      },
+      "pressure_gauge": {
+        "model": "gemini-2.5-flash",
+        "calls": 1,
+        "input_tokens": 1423,
+        "output_tokens": 83
+      },
+      "tamper_seal": {
+        "model": "gemini-2.5-flash",
+        "calls": 1,
+        "input_tokens": 1429,
+        "output_tokens": 74
+      },
+      "serial_uniqueness": {
+        "model": "gemini-2.5-flash",
+        "calls": 1,
+        "input_tokens": 1266,
+        "output_tokens": 69
+      }
+    }
+  }
+}

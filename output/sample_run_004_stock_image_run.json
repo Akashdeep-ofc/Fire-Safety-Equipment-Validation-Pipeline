@@ -1,0 +1,118 @@
+{
+  "submission_id": "sample_002",
+  "timestamp": "2026-05-11T11:54:34.506984+00:00",
+  "image_folder": "/Users/akashdeep/Desktop/Main/Official Docs and Info/Placement Drive/Offcampus/9. DeepReef/Assignment/Project Deepreef Assignment/Fire-Safety-Equipment-Validation-Pipeline/data/sample",
+  "checks": {
+    "subject_verification": {
+      "status": "FAIL",
+      "confidence": 1.0,
+      "reason": "The image is a computer-generated illustration featuring a prominent iStock watermark.",
+      "usage": {
+        "model": "gemini-3.1-flash-lite",
+        "calls": 1,
+        "input_tokens": 1306,
+        "output_tokens": 41,
+        "thinking_tokens": 0,
+        "cached_tokens": 0,
+        "total_tokens": 1347
+      }
+    },
+    "refill_status": {
+      "status": "UNCERTAIN",
+      "confidence": 0.0,
+      "reason": "Skipped: subject verification failed \u2014 not a fire extinguisher.",
+      "usage": {
+        "model": "skipped",
+        "calls": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "thinking_tokens": 0,
+        "cached_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "pressure_gauge": {
+      "status": "UNCERTAIN",
+      "confidence": 0.0,
+      "reason": "Skipped: subject verification failed \u2014 not a fire extinguisher.",
+      "usage": {
+        "model": "skipped",
+        "calls": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "thinking_tokens": 0,
+        "cached_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "tamper_seal": {
+      "status": "UNCERTAIN",
+      "confidence": 0.0,
+      "reason": "Skipped: subject verification failed \u2014 not a fire extinguisher.",
+      "usage": {
+        "model": "skipped",
+        "calls": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "thinking_tokens": 0,
+        "cached_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "serial_uniqueness": {
+      "status": "UNCERTAIN",
+      "confidence": 0.0,
+      "reason": "Skipped: subject verification failed \u2014 not a fire extinguisher.",
+      "usage": {
+        "model": "skipped",
+        "calls": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "thinking_tokens": 0,
+        "cached_tokens": 0,
+        "total_tokens": 0
+      }
+    }
+  },
+  "verdict": "REJECT",
+  "usage_summary": {
+    "total_calls": 1,
+    "total_input_tokens": 1306,
+    "total_output_tokens": 41,
+    "total_thinking_tokens": 0,
+    "total_cached_tokens": 0,
+    "total_tokens": 1347,
+    "per_check": {
+      "subject_verification": {
+        "model": "gemini-3.1-flash-lite",
+        "calls": 1,
+        "input_tokens": 1306,
+        "output_tokens": 41
+      },
+      "refill_status": {
+        "model": "skipped",
+        "calls": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "pressure_gauge": {
+        "model": "skipped",
+        "calls": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "tamper_seal": {
+        "model": "skipped",
+        "calls": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "serial_uniqueness": {
+        "model": "skipped",
+        "calls": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    }
+  }
+}
