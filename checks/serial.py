@@ -135,7 +135,7 @@ def run(
     if not serial:
         return CheckResult(
             status="UNCERTAIN",
-            confidence=0.1,
+            confidence=ocr_confidence,
             reason=f"No serial number found in any image. {ocr_reason}",
             extra={"serial_number": None},
         )
@@ -146,7 +146,7 @@ def run(
     if is_duplicate:
         return CheckResult(
             status="FAIL",
-            confidence=0.99,
+            confidence=ocr_confidence,
             reason=(
                 f"Serial '{serial}' already seen in submission "
                 f"'{prior['submission_id']}' on {prior['first_seen'][:10]}."

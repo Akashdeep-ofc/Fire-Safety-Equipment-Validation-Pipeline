@@ -40,7 +40,7 @@ import checks.serial as serial_check
 # Image loading
 # ---------------------------------------------------------------------------
 
-SUPPORTED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp"}
+SUPPORTED_EXTENSIONS = {".jpg", ".jpeg", ".png"}
 
 
 def load_images(folder: Path) -> list[bytes]:
@@ -90,7 +90,11 @@ def serialise_check(name: str, result: CheckResult, usage: UsageRecord) -> dict:
             "calls": usage.calls,
             "input_tokens": usage.input_tokens,
             "output_tokens": usage.output_tokens,
+            "thinking_tokens": usage.thinking_tokens,
+            "cached_tokens": usage.cached_tokens,
+            "total_tokens": usage.total_tokens,
         },
+
     }
     if result.extra:
         out["details"] = result.extra
@@ -106,7 +110,9 @@ def build_report(
     total_calls = sum(u.calls for _, u in checks_results.values())
     total_in = sum(u.input_tokens for _, u in checks_results.values())
     total_out = sum(u.output_tokens for _, u in checks_results.values())
-
+    total_thinking = sum(u.thinking_tokens for _, u in checks_results.values())
+    total_cached = sum(u.cached_tokens for _, u in checks_results.values())
+    total_all = sum(u.total_tokens for _, u in checks_results.values())
     return {
         "submission_id": submission_id,
         "timestamp": datetime.now(timezone.utc).isoformat(),
@@ -120,6 +126,9 @@ def build_report(
             "total_calls": total_calls,
             "total_input_tokens": total_in,
             "total_output_tokens": total_out,
+            "total_thinking_tokens": total_thinking,
+            "total_cached_tokens": total_cached,
+            "total_tokens": total_all,
             "per_check": {
                 name: {
                     "model": usage.model,
@@ -155,8 +164,8 @@ def run_pipeline(
     checks_results: dict[str, tuple[CheckResult, UsageRecord]] = {}
 
     # --- Check 1: Subject verification ---
-    print("\n[1/5] Subject verification  (gemini-2.5-flash-lite)...")
-    u1 = UsageRecord(model="gemini-2.5-flash-lite")
+    print("\n[1/5] Subject verification  (gemini-3.1-flash-lite)...")
+    u1 = UsageRecord(model="gemini-3.1-flash-lite")
     r1 = subject_check.run(images, u1)
     checks_results["subject_verification"] = (r1, u1)
     _print_result(r1)

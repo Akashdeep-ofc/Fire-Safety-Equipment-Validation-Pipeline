@@ -1,0 +1,117 @@
+{
+  "submission_id": "sample_001",
+  "timestamp": "2026-05-09T18:59:05.004103+00:00",
+  "image_folder": "/Users/akashdeep/Desktop/Main/Official Docs and Info/Placement Drive/Offcampus/9. DeepReef/Assignment/Project Deepreef Assignment/Fire-Safety-Equipment-Validation-Pipeline/data/sample",
+  "checks": {
+    "subject_verification": {
+      "status": "PASS",
+      "confidence": 0.9,
+      "reason": "The images clearly show a physical fire extinguisher with a pressure gauge, handle, and nozzle.",
+      "usage": {
+        "model": "gemini-2.5-flash-lite",
+        "calls": 1,
+        "input_tokens": 1274,
+        "output_tokens": 45
+      }
+    },
+    "refill_status": {
+      "status": "PASS",
+      "confidence": 1.0,
+      "reason": "The unit was refilled on 20/04/2026 and is due for its next refill by 20/04/2027, which means it is currently within its valid service period as of today, 10/05/2026.",
+      "usage": {
+        "model": "gemini-2.5-flash",
+        "calls": 1,
+        "input_tokens": 1511,
+        "output_tokens": 132
+      },
+      "details": {
+        "refilling_date": "20/04/2026",
+        "refilling_due_date": "20/04/2027"
+      }
+    },
+    "pressure_gauge": {
+      "status": "PASS",
+      "confidence": 0.95,
+      "reason": "The needle is in the green zone, the gauge appears intact, and no tampering is detected.",
+      "usage": {
+        "model": "gemini-2.5-flash",
+        "calls": 1,
+        "input_tokens": 1423,
+        "output_tokens": 76
+      },
+      "details": {
+        "needle_zone": "green",
+        "gauge_intact": true,
+        "tampering_detected": false
+      }
+    },
+    "tamper_seal": {
+      "status": "PASS",
+      "confidence": 1.0,
+      "reason": "A yellow numbered plastic tamper-evident tag and metal safety pin are clearly present, unbroken, and intact, indicating no tampering.",
+      "usage": {
+        "model": "gemini-2.5-flash",
+        "calls": 1,
+        "input_tokens": 1429,
+        "output_tokens": 78
+      },
+      "details": {
+        "seal_present": true,
+        "seal_type": "yellow numbered plastic tag and metal safety pin"
+      }
+    },
+    "serial_uniqueness": {
+      "status": "PASS",
+      "confidence": 1.0,
+      "reason": "Serial '1615' read successfully; first occurrence \u2014 recorded.",
+      "usage": {
+        "model": "gemini-2.5-flash",
+        "calls": 1,
+        "input_tokens": 1266,
+        "output_tokens": 66
+      },
+      "details": {
+        "serial_number": "1615",
+        "duplicate": false
+      }
+    }
+  },
+  "verdict": "ACCEPT",
+  "usage_summary": {
+    "total_calls": 5,
+    "total_input_tokens": 6903,
+    "total_output_tokens": 397,
+    "per_check": {
+      "subject_verification": {
+        "model": "gemini-2.5-flash-lite",
+        "calls": 1,
+        "input_tokens": 1274,
+        "output_tokens": 45
+      },
+      "refill_status": {
+        "model": "gemini-2.5-flash",
+        "calls": 1,
+        "input_tokens": 1511,
+        "output_tokens": 132
+      },
+      "pressure_gauge": {
+        "model": "gemini-2.5-flash",
+        "calls": 1,
+        "input_tokens": 1423,
+        "output_tokens": 76
+      },
+      "tamper_seal": {
+        "model": "gemini-2.5-flash",
+        "calls": 1,
+        "input_tokens": 1429,
+        "output_tokens": 78
+      },
+      "serial_uniqueness": {
+        "model": "gemini-2.5-flash",
+        "calls": 1,
+        "input_tokens": 1266,
+        "output_tokens": 66
+      }
+    }
+  }
+}

@@ -95,6 +95,9 @@ def call_gemini(
             usage.add(
                 input_tok=meta.prompt_token_count or 0,
                 output_tok=meta.candidates_token_count or 0,
+                thinking_tok=meta.thoughts_token_count or 0,
+                cached_tok=meta.cached_content_token_count or 0,
+                total_tok=meta.total_token_count or 0,
             )
 
             raw = response.text.strip()

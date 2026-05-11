@@ -4,16 +4,16 @@ Check 1 — Subject verification
 Confirms the submission images show a real, physical fire extinguisher —
 not a screenshot, stock photo, illustration, or unrelated object.
 
-Model tier: gemini-2.5-flash-lite
+Model tier: gemini-3.1-flash-lite
 Justification: This is the simplest visual recognition task. Flash-Lite
-handles it accurately at the lowest cost (1 000 req/day free). No deep
+handles it accurately at the lowest cost (20 req/day free). No deep
 reasoning required — just object identification across all images.
 """
 
 from checks.base import CheckResult, UsageRecord
 from utils.gemini_client import call_gemini
 
-MODEL = "gemini-2.5-flash-lite"
+MODEL = "gemini-3.1-flash-lite"
 
 PROMPT = """You are a fire-safety equipment inspector.
 

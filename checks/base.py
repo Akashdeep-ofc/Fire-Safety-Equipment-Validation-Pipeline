@@ -19,8 +19,15 @@ class UsageRecord:
     calls: int = 0
     input_tokens: int = 0
     output_tokens: int = 0
+    thinking_tokens: int = 0
+    cached_tokens: int = 0
+    total_tokens: int = 0
 
-    def add(self, input_tok: int, output_tok: int):
+    def add(self, input_tok: int, output_tok: int, 
+            thinking_tok: int, cached_tok: int, total_tok: int):
         self.calls += 1
         self.input_tokens += input_tok
         self.output_tokens += output_tok
+        self.thinking_tokens += thinking_tok
+        self.cached_tokens += cached_tok
+        self.total_tokens += total_tok
